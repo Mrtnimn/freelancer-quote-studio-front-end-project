@@ -1,10 +1,10 @@
 # Freelancer Quote Studio
 
-A portfolio-ready front-end project that solves a simple business problem: helping freelancers and small agencies create accurate quotes quickly, then save and search quote history.
+A front-end project that solves a simple business problem: helping freelancers and small agencies create accurate quotes quickly, then save and search quote history.
 
 ## Why this project is valuable for front-end portfolios
 
-This repository demonstrates practical front-end competencies recruiters expect for entry-level roles:
+This repository demonstrates practical front-end competencies such as:
 
 - Semantic, accessible HTML structure and ARIA live feedback
 - Responsive UI with modern CSS tokens and system dark/light theme support
