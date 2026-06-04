@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelancer Quote Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Freelancer Quote Studio</h1>
+        <p>Create accurate quotes quickly and keep a searchable quote history.</p>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="Toggle color theme">🌗 Theme</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-labelledby="quote-builder-title">
+        <h2 id="quote-builder-title">Build Quote</h2>
+
+        <form id="quote-form" novalidate>
+          <div class="grid-2">
+            <label>
+              Client Name
+              <input id="client" name="client" autocomplete="organization" required maxlength="80" />
+            </label>
+
+            <label>
+              Contact Email
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label>
+              Project Deadline
+              <input id="deadline" name="deadline" type="date" />
+            </label>
+
+            <label>
+              Tax %
+              <input id="tax" name="tax" type="number" min="0" max="100" step="0.1" value="10" />
+            </label>
+          </div>
+
+          <label>
+            Notes
+            <textarea id="notes" name="notes" rows="3" maxlength="300"></textarea>
+          </label>
+
+          <fieldset class="item-builder">
+            <legend>Add Service Item</legend>
+            <div class="grid-3">
+              <label>
+                Service
+                <input id="item-name" maxlength="80" />
+              </label>
+
+              <label>
+                Quantity
+                <input id="item-qty" type="number" min="0.5" step="0.5" value="1" />
+              </label>
+
+              <label>
+                Unit Price
+                <input id="item-price" type="number" min="0" step="0.01" value="0" />
+              </label>
+            </div>
+            <button id="add-item" type="button">Add Item</button>
+            <p id="form-feedback" role="status" aria-live="polite"></p>
+          </fieldset>
+        </form>
+
+        <table class="items-table" aria-label="Quote line items">
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Unit Price</th>
+              <th scope="col">Line Total</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="items-body"></tbody>
+        </table>
+
+        <div class="totals" aria-live="polite">
+          <p>Subtotal: <strong id="subtotal">$0.00</strong></p>
+          <p>Tax: <strong id="tax-total">$0.00</strong></p>
+          <p class="grand-total">Total: <strong id="grand-total">$0.00</strong></p>
+        </div>
+
+        <div class="actions">
+          <button id="save-quote" type="button">Save Quote</button>
+          <button id="reset-quote" type="button">Reset</button>
+          <button id="export-data" type="button">Export Quotes</button>
+          <label class="import-button" for="import-data">Import Quotes</label>
+          <input id="import-data" type="file" accept="application/json" hidden />
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="saved-quotes-title">
+        <h2 id="saved-quotes-title">Saved Quotes</h2>
+        <label>
+          Search by client or email
+          <input id="search" type="search" placeholder="Type to filter..." />
+        </label>
+        <ul id="quotes-list" class="quotes-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
