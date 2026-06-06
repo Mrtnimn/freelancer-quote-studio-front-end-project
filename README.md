@@ -28,4 +28,4 @@ Freelancers often quote work manually in spreadsheets or messages, which is erro
 
 Open `/tmp/workspace/Mrtnimn/literate-carnival-front-end-project/index.html` in a browser.
 
-No build step or dependencies are required.
+There is no build step or dependencies required.
